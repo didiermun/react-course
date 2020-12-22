@@ -1,8 +1,10 @@
 import React from "react";
 import { Image, Box, Card, Heading, Text, Button } from "rebass";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "./actions";
 const Home = (props) => {
   const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
   return (
     <Box width={256}>
       <Card
@@ -17,10 +19,16 @@ const Home = (props) => {
           <Heading as="h3">Card Demo where counter is {counter}</Heading>
           <Text fontSize={0}>You can edit this code</Text>
         </Box>
-        <Button variant="primary" mr={2}>
+        <Button
+          variant="primary"
+          mr={2}
+          onClick={() => dispatch(increment(12))}
+        >
           ++++++
         </Button>
-        <Button variant="secondary">-----</Button>
+        <Button variant="secondary" onClick={() => dispatch(decrement(6))}>
+          -----
+        </Button>
       </Card>
     </Box>
   );
