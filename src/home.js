@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, Box, Card, Heading, Text, Button } from "rebass";
+import { useSelector } from "react-redux";
 const Home = (props) => {
+  const counter = useSelector((state) => state.counter);
   return (
     <Box width={256}>
       <Card
@@ -12,13 +14,13 @@ const Home = (props) => {
       >
         <Image src={props.image} />
         <Box px={2}>
-          <Heading as="h3">Card Demo</Heading>
+          <Heading as="h3">Card Demo where counter is {counter}</Heading>
           <Text fontSize={0}>You can edit this code</Text>
         </Box>
         <Button variant="primary" mr={2}>
-          Beep
+          ++++++
         </Button>
-        <Button variant="secondary">Boop</Button>
+        <Button variant="secondary">-----</Button>
       </Card>
     </Box>
   );
