@@ -9,7 +9,7 @@ const Login = () => {
       <div>
         <img src={pro} alt="profile"></img>
       </div>
-      <div className={login - container}>
+      <div>
         <form>
           <img src={waxe} />
         </form>
